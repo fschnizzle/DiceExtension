@@ -7,13 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     resetButton.addEventListener('click', () => resetDice('d6'));
 });
 
-function toggleHiddenPip(pip){
+function toggleHiddenPip(pip) {
     console.log(pip);
     let pipEl = document.getElementById(pip);
-    if (pipEl.classList.contains('hidden')){
+    if (pipEl.classList.contains('hidden')) {
         pipEl.classList.remove('hidden');
-    }
-    else{
+    } else {
         pipEl.classList.add('hidden');
     }
 }
@@ -41,14 +40,14 @@ let diceRollPipLists = {
     7: [1, 3, 4, 5, 6, 7, 9],
     8: [1, 2, 3, 4, 6, 7, 8, 9],
     9: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
+};
 
-function rollDice(dice){
-    let d=9;
+function rollDice(dice) {
+    let d = 9;
     let rollHistoryEl = document.getElementById('d6-roll-history');
-    
-    if (dice == 'd6'){
-        d=6;
+
+    if (dice == 'd6') {
+        d = 6;
         rollHistoryEl = document.getElementById('d6-roll-history');
     }
 
@@ -62,4 +61,8 @@ function rollDice(dice){
     for (let i in pips) {
         pipEls[pips[i] - 1].className = 'pip';
     }
+}
+
+function main(){
+    resetDice('d6');
 }
