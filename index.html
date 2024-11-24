@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dice Extension</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1>Dice Extension</h1>
+        <div id="d6-row" class="dice-row">
+            <h2>d6:</h2>
+            <button id="d6-button" class="dice-btn" onclick="rollDice('d6')"> 
+                <span id="d6-pip-1" class="pip" ></span>
+                <span id="d6-pip-2" class="pip"></span>
+                <span id="d6-pip-3" class="pip"></span>
+                <span id="d6-pip-4" class="pip"></span>
+                <span id="d6-pip-5" class="pip"></span>
+                <span id="d6-pip-6" class="pip"></span>
+                <span id="d6-pip-7" class="pip"></span>
+                <span id="d6-pip-8" class="pip"></span>
+                <span id="d6-pip-9" class="pip"></span>
+            </button>
+            <p id="d6-roll-history" class="roll-history">Rolls: </p>
+        </div>  
+        <button id="reset-button" class="reset-btn" onclick="resetDice('d6')">Reset</button>
+    </body>
+</html>
