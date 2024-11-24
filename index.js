@@ -1,4 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Attach event listeners
+    const rollButton = document.getElementById('d6-button');
+    const resetButton = document.getElementById('reset-button');
 
+    rollButton.addEventListener('click', () => rollDice('d6'));
+    resetButton.addEventListener('click', () => resetDice('d6'));
+});
 
 function toggleHiddenPip(pip){
     console.log(pip);
@@ -11,16 +18,15 @@ function toggleHiddenPip(pip){
     }
 }
 
-function resetDice(dice){
-    resetDicePips(dice);
+function resetDice(dice) {
+    resetDicePips();
     let rollHistoryEl = document.getElementById(dice + '-roll-history');
     rollHistoryEl.innerHTML = "Rolls: ";
 }
 
-
-function resetDicePips(){
+function resetDicePips() {
     let pips = document.getElementsByClassName('pip');
-    for (let i = 0; i < pips.length; i++){
+    for (let i = 0; i < pips.length; i++) {
         pips[i].className = 'pip hidden';
     }
 }
@@ -53,8 +59,7 @@ function rollDice(dice){
 
     let pips = diceRollPipLists[roll];
     let pipEls = document.getElementsByClassName('pip');
-    for (i in pips){
-        pipEls[pips[i]-1].className = 'pip';
+    for (let i in pips) {
+        pipEls[pips[i] - 1].className = 'pip';
     }
 }
-
